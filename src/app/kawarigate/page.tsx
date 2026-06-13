@@ -226,13 +226,28 @@ export default function KawarigatePage() {
         title="Making Irrigation Accessible for Every Farmer"
         text="Across Africa, millions of farmers remain dependent on seasonal rainfall, making agricultural production vulnerable to drought, climate variability, and unpredictable weather conditions."
       >
-        <div className="glass rounded-lg p-6 md:p-10">
-          <p className="max-w-5xl text-2xl font-black leading-tight text-slate-950 md:text-4xl dark:text-white">
-            While irrigation can dramatically increase yields and enable year-round farming, most farmers cannot afford the high upfront cost of purchasing modern irrigation equipment.
-          </p>
-          <p className="mt-6 max-w-4xl text-base leading-8 text-slate-600 dark:text-slate-300">
-            Kawarigate bridges this gap by combining solar-powered irrigation technology with flexible financing, enabling farmers to access irrigation immediately and repay gradually through harvest proceeds.
-          </p>
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.82fr] lg:items-center">
+          <div className="glass rounded-lg p-6 md:p-10">
+            <p className="max-w-5xl text-2xl font-black leading-tight text-slate-950 md:text-4xl dark:text-white">
+              While irrigation can dramatically increase yields and enable year-round farming, most farmers cannot afford the high upfront cost of purchasing modern irrigation equipment.
+            </p>
+            <p className="mt-6 max-w-4xl text-base leading-8 text-slate-600 dark:text-slate-300">
+              Kawarigate was created to bridge this gap.
+            </p>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-slate-600 dark:text-slate-300">
+              By combining solar-powered irrigation technology with flexible financing, Kawarigate enables farmers to access irrigation immediately and repay gradually through harvest proceeds.
+            </p>
+          </div>
+          <Reveal delay={0.08}>
+            <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-slate-200 shadow-2xl dark:border-white/10">
+              <Image
+                src="/images/kawarigate-irrigation-hero.png"
+                alt="Solar-powered irrigation infrastructure operating on agricultural land"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
       </Section>
 
@@ -272,15 +287,30 @@ export default function KawarigatePage() {
         title="Affordable Irrigation Through Harvest-Based Financing"
         text="Instead of paying large sums upfront, farmers gain immediate access to irrigation systems and repay over time through harvest proceeds. This approach lowers financial barriers while enabling productivity gains from day one."
       >
-        <div className="grid gap-5 md:grid-cols-4">
-          {["Solar irrigation technology", "Structured financing", "Farmer support services", "AI-powered farm advisory"].map((item, index) => (
-            <Reveal key={item} delay={index * 0.05}>
-              <div className="h-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-                <div className="grid h-11 w-11 place-items-center rounded-full bg-farm text-sm font-black text-white">{index + 1}</div>
-                <h3 className="mt-6 text-xl font-black text-slate-950 dark:text-white">{item}</h3>
-              </div>
-            </Reveal>
-          ))}
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <Reveal>
+            <div className="relative min-h-[460px] overflow-hidden rounded-lg border border-slate-200 shadow-2xl dark:border-white/10">
+              <Image
+                src="/images/kawarigate-productive-irrigation.png"
+                alt="Healthy irrigated vegetable farm with drip irrigation lines and solar-powered water infrastructure"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <div>
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.22em] text-amber">Kawarigate combines</p>
+            <div className="grid gap-5 md:grid-cols-2">
+              {["Solar irrigation technology", "Structured financing", "Farmer support services", "AI-powered farm advisory"].map((item, index) => (
+                <Reveal key={item} delay={index * 0.05}>
+                  <div className="h-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
+                    <div className="grid h-11 w-11 place-items-center rounded-full bg-farm text-sm font-black text-white">{index + 1}</div>
+                    <h3 className="mt-6 text-xl font-black text-slate-950 dark:text-white">{item}</h3>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -300,11 +330,15 @@ export default function KawarigatePage() {
             <div className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
               <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Step 2</p>
               <h2 className="mt-3 text-3xl font-black text-slate-950 dark:text-white">Irrigation System Selection</h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+                Farmers choose the solution that fits their needs.
+              </p>
               <div className="mt-6 grid gap-5 lg:grid-cols-3">
                 {systems.map((system) => (
                   <div key={system.title} className="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/[0.04]">
                     <h3 className="text-xl font-black text-slate-950 dark:text-white">{system.title}</h3>
                     <p className="mt-2 text-sm font-black text-farm dark:text-emerald-300">Suitable for {system.range}</p>
+                    <p className="mt-5 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Includes</p>
                     <div className="mt-5 grid gap-2">
                       {system.includes.map((item) => (
                         <p key={item} className="flex gap-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
@@ -324,6 +358,7 @@ export default function KawarigatePage() {
               <div className="h-full rounded-lg border border-slate-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Step 3</p>
                 <h2 className="mt-3 text-3xl font-black text-slate-950 dark:text-white">Installation & Training</h2>
+                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">Kawarigate provides:</p>
                 <div className="mt-5 grid gap-3">
                   {["Equipment installation", "Farmer onboarding", "Operational training", "Troubleshooting guidance", "Maintenance education"].map((item) => (
                     <p key={item} className="flex gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
@@ -338,6 +373,10 @@ export default function KawarigatePage() {
               <div className="h-full rounded-lg border border-slate-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Step 4</p>
                 <h2 className="mt-3 text-3xl font-black text-slate-950 dark:text-white">Harvest-Based Repayment</h2>
+                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                  Farmers repay gradually through harvest proceeds.
+                </p>
+                <p className="mt-5 text-sm font-black uppercase tracking-[0.18em] text-amber">Benefits include</p>
                 <div className="mt-5 grid gap-3">
                   {["No large upfront payment", "Flexible repayment structure", "Improved cash flow", "Reduced financial pressure", "Faster adoption"].map((item) => (
                     <p key={item} className="flex gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
@@ -353,30 +392,65 @@ export default function KawarigatePage() {
       </Section>
 
       <Section eyebrow="Benefits" title="What farmers gain with Kawarigate">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => (
-            <Reveal key={benefit.title} delay={index * 0.04}>
-              <div className="h-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.04]">
-                <benefit.icon className="h-8 w-8 text-farm dark:text-emerald-300" />
-                <h2 className="mt-6 text-xl font-black text-slate-950 dark:text-white">{benefit.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{benefit.text}</p>
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+          <div className="grid gap-5 md:grid-cols-2">
+            {benefits.map((benefit, index) => (
+              <Reveal key={benefit.title} delay={index * 0.04}>
+                <div className="h-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.04]">
+                  <benefit.icon className="h-8 w-8 text-farm dark:text-emerald-300" />
+                  <h2 className="mt-6 text-xl font-black text-slate-950 dark:text-white">{benefit.title}</h2>
+                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{benefit.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.08}>
+            <div className="sticky top-28 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-white/[0.04]">
+              <div className="relative h-80">
+                <Image
+                  src="/images/kawarigate-productive-irrigation.png"
+                  alt="Productive irrigated crop rows enabled by solar-powered water access"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </Reveal>
-          ))}
+              <div className="p-6">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Year-round production</p>
+                <h3 className="mt-3 text-2xl font-black text-slate-950 dark:text-white">Reliable water turns climate risk into planned production.</h3>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
       <Section className="bg-slate-950 text-white" eyebrow="Farmer support services" title="More Than Equipment Financing" text="Every participating farmer receives ongoing support.">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-          {supportServices.map((service, index) => (
-            <Reveal key={service.title} delay={index * 0.04}>
-              <div className="h-full rounded-lg border border-white/10 bg-white/[0.06] p-5">
-                <service.icon className="h-7 w-7 text-amber" />
-                <h2 className="mt-5 text-lg font-black text-white">{service.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-300">{service.text}</p>
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <Reveal>
+            <div className="relative min-h-[460px] overflow-hidden rounded-lg border border-white/10">
+              <Image
+                src="/images/kawarigate-training-support.png"
+                alt="Farmers receiving installation training beside solar-powered irrigation equipment"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/72 to-transparent" />
+              <div className="absolute bottom-0 p-6">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Support layer</p>
+                <h2 className="mt-3 text-3xl font-black text-white">Installation, training, maintenance, and advisory stay with the farmer.</h2>
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+          <div className="grid gap-5 md:grid-cols-2">
+            {supportServices.map((service, index) => (
+              <Reveal key={service.title} delay={index * 0.04}>
+                <div className="h-full rounded-lg border border-white/10 bg-white/[0.06] p-5">
+                  <service.icon className="h-7 w-7 text-amber" />
+                  <h2 className="mt-5 text-lg font-black text-white">{service.title}</h2>
+                  <p className="mt-2 text-sm leading-7 text-slate-300">{service.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -404,13 +478,21 @@ export default function KawarigatePage() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {aiFeatures.map((feature) => (
-                <div key={feature} className="flex gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-                  <BadgeCheck className="mt-1 h-5 w-5 shrink-0 text-farm dark:text-emerald-300" />
-                  <p className="text-sm font-bold leading-6 text-slate-700 dark:text-slate-200">{feature}</p>
-                </div>
-              ))}
+            <div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {aiFeatures.map((feature) => (
+                  <div key={feature} className="flex gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
+                    <BadgeCheck className="mt-1 h-5 w-5 shrink-0 text-farm dark:text-emerald-300" />
+                    <p className="text-sm font-bold leading-6 text-slate-700 dark:text-slate-200">{feature}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
+                <h3 className="text-xl font-black text-slate-950 dark:text-white">Multilingual Support</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                  Farmlingua is being developed to support local African languages, making agricultural knowledge accessible regardless of literacy level.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -434,17 +516,34 @@ export default function KawarigatePage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-950 text-white" eyebrow="Kawafarm ecosystem" title="Part of a Bigger Agricultural Ecosystem">
-        <div className="grid gap-5 lg:grid-cols-4">
-          {ecosystem.map(([title, text], index) => (
-            <Reveal key={title} delay={index * 0.05}>
-              <div className="h-full rounded-lg border border-white/10 bg-white/[0.06] p-6">
-                <Map className="h-8 w-8 text-amber" />
-                <h2 className="mt-5 text-xl font-black text-white">{title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
+      <Section className="bg-slate-950 text-white" eyebrow="Why Kawafarm is building Kawarigate" title="Part of a Bigger Agricultural Ecosystem" text="Kawarigate complements Kawafarm's broader mission.">
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+          <div className="grid gap-5 md:grid-cols-2">
+            {ecosystem.map(([title, text], index) => (
+              <Reveal key={title} delay={index * 0.05}>
+                <div className="h-full rounded-lg border border-white/10 bg-white/[0.06] p-6">
+                  <Map className="h-8 w-8 text-amber" />
+                  <h2 className="mt-5 text-xl font-black text-white">{title}</h2>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.08}>
+            <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/10">
+              <Image
+                src="/images/kawarigate-training-support.png"
+                alt="Farmers and technicians working with irrigation infrastructure as part of Kawafarm's ecosystem"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
+              <div className="absolute bottom-0 p-6">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-amber">Complete ecosystem</p>
+                <h3 className="mt-3 text-3xl font-black text-white">Farms, finance, intelligence, and markets reinforce each other.</h3>
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
         </div>
         <div className="mt-8 rounded-lg border border-white/10 bg-white/[0.06] p-7">
           <p className="max-w-5xl text-lg leading-8 text-slate-200">
