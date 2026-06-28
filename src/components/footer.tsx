@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { navItems } from "@/lib/content";
 
@@ -7,9 +8,21 @@ export function Footer() {
     <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-farm text-lg font-black text-white">K</span>
-            <span className="text-lg font-black tracking-normal text-slate-950 dark:text-white">Kawafarm</span>
+          <div className="flex items-center">
+            <Image
+              src="/logo/kawafarm-logo-dark.png"
+              alt="Kawafarm"
+              width={1840}
+              height={265}
+              className="h-8 w-auto dark:hidden"
+            />
+            <Image
+              src="/logo/kawafarm-logo-white.png"
+              alt="Kawafarm"
+              width={1840}
+              height={265}
+              className="h-8 w-auto hidden dark:block"
+            />
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
             Farm first. Learn deeply. Build technology that matters.

@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   description:
     "Kawafarm is a farm-first agritech company making farming accessible, efficient, and sustainable through real agricultural operations, AI-powered tools, and market systems.",
   keywords: ["Kawafarm", "agritech", "African agriculture", "farm technology", "AI farming", "Kawafarm Market", "Farmlingua"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: "/apple-touch-icon.png"
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Kawafarm | Building the Future of Agriculture",
     description:
